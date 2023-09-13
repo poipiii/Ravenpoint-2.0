@@ -1,0 +1,49 @@
+version: "3.8"
+services:
+  ravenpoint-2.0-ui:
+    build:
+      context: ./RavenPoint_V2_UI
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+
+
+  ravenpoint-2.0:
+    build:
+      context: ./RavenPoint_V2
+      dockerfile: Dockerfile
+    ports:
+      - 5050:5050
+
+  ravenpoint-2.0-postgres:
+    image: postgres:alpine
+    #change the container name to a name that matches your project 
+    ports:
+      - 5432:5432
+    environment:
+      #change the following env var to match the your project 
+      POSTGRES_DB : ravenpoint-2.0
+      POSTGRES_USER : root
+      POSTGRES_PASSWORD : test_password
+    
+    volumes:
+      - postgres_data:/var/lib/postgres/
+
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+
+  maildev:
+    image: maildev/maildev
+    ports:
+      - "1080:1080"
+      - "1025:1025"
+
+
+volumes:
+  postgres_data:
+  
