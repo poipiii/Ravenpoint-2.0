@@ -10,8 +10,7 @@ builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI(
         (options =>
@@ -20,7 +19,7 @@ if (app.Environment.IsDevelopment())
     options.RoutePrefix = string.Empty;
 })
     );
-}
+
 
 app.UseHttpsRedirection();
 
