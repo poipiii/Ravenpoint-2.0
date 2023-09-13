@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RavenPoint_V2", "RavenPoint_V2.csproj", "{9A47CC46-62A9-4C01-A02B-496FE3BF5107}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A47CC46-62A9-4C01-A02B-496FE3BF5107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A47CC46-62A9-4C01-A02B-496FE3BF5107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A47CC46-62A9-4C01-A02B-496FE3BF5107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A47CC46-62A9-4C01-A02B-496FE3BF5107}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CF77D9C6-2B41-4A30-8F9C-CF055D9C7C45}
+	EndGlobalSection
+EndGlobal
