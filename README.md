@@ -43,11 +43,11 @@ In the longer term, when (or if) an internal cloud is made available, RavenPoint
 
 
 ## Installation
-#WIP
+WIP
 
 
 ## Usage
-#WIP
+WIP
 
 ## Notes
 WIP 
