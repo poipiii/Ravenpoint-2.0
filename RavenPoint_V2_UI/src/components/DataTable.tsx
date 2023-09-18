@@ -12,7 +12,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from "@tanstack/react-table"
-import { ArrowUpDown, ChevronDown, MoreHorizontal } from "lucide-react"
+import { ArrowUpDown, ChevronDown, Edit, MoreHorizontal, Save } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Checkbox } from "@/components/ui/checkbox"
@@ -237,10 +237,11 @@ export function DataTable({TableMetaData,TableColumns,TableData}:{TableMetaData:
         </DropdownMenu> */}
         <div>
           {EditState == false ?
-                      <Button onClick={()=>setEditState(!EditState)}>Edit </Button>
+       
+                      <Edit  className="h-5 w-5 text-zinc-500 hover:text-zinc-800 hover:cursor-pointer"  onClick={()=>setEditState(!EditState)}/>
                       :
-                      <Button onClick={()=>{setEditState(!EditState)
-                      table.toggleAllPageRowsSelected(false)}}>Save </Button>
+                      <Save className="h-5 w-5 text-zinc-500 hover:text-zinc-800 hover:cursor-pointer" onClick={()=>{setEditState(!EditState)
+                      table.toggleAllPageRowsSelected(false)}} />
 
         }
 

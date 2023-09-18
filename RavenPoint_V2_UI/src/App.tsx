@@ -1,16 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import NavBar from './components/NavBar'
-import { DataTable } from './components/DataTable'
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+import AppRoutes from './AppRoutes'
+const queryClient = new QueryClient()
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-     <NavBar />
-     <DataTable />
+        <QueryClientProvider client={queryClient}>
+          <AppRoutes />
+         </QueryClientProvider>
+
     </>
   )
 }
