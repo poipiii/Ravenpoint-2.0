@@ -4,6 +4,7 @@ import {useDropzone} from 'react-dropzone'
 import { Separator } from "./ui/separator";
 import { nanoid } from 'nanoid'
 import { ScrollArea } from "./ui/scroll-area";
+import Dropzone from 'react-dropzone';
 
 interface UploadedFile {
   content: File;
@@ -16,7 +17,10 @@ const Upload: React.FC = () => {
         setFiles([...files, ...acceptedFiles.map(file => ({content:file, name: file.name,file_id: nanoid()}))])
         
   }, [])
-  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop, accept: {
+      'text/plain': [".csv"],
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet": [],
+    }})
 
 
 
@@ -35,6 +39,7 @@ const Upload: React.FC = () => {
   return (
     <div className="flex flex-col my-8">
         <div className=" text-center border-2 border-dashed border-gray-400 rounded-md p-4">
+          
           <div>
         <div {...getRootProps({className: 'dropzone'})}>
         <input {...getInputProps()} />
@@ -52,8 +57,9 @@ const Upload: React.FC = () => {
                     No files uploaded yet
                 </div>
                 :
-                <ScrollArea className="h-[400px]">
-                      <div className="flex flex-col space-y-2">
+                
+                <ScrollArea className="h-[300px]">
+                      <div className="flex flex-col space-y-4">
                 {files.map((file, index) => (
                     <div className="flex flex-row justify-between" key={file.file_id}>
                         <p>{file.name}</p>
